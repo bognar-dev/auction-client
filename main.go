@@ -25,11 +25,11 @@ func main() {
 	// Create application with options
 	err := wails.Run(&options.App{
 		Title:             "auction-client",
-		Width:             1024,
+		Width:             1400,
 		Height:            768,
-		MinWidth:          1024,
+		MinWidth:          1400,
 		MinHeight:         768,
-		MaxWidth:          1280,
+		MaxWidth:          1400,
 		MaxHeight:         800,
 		DisableResize:     false,
 		Fullscreen:        false,

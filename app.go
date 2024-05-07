@@ -3,11 +3,13 @@ package main
 import (
 	"context"
 	"fmt"
+	"auction-client/pkg"
 )
 
 // App struct
 type App struct {
 	ctx context.Context
+	client *pkg.Client
 }
 
 // NewApp creates a new App application struct
@@ -18,7 +20,13 @@ func NewApp() *App {
 // startup is called at application startup
 func (a *App) startup(ctx context.Context) {
 	// Perform your setup here
+	var err error
 	a.ctx = ctx
+	a.client, err = pkg.ConnectClient(1, "localhost:8080", 200)
+	if err != nil {
+		fmt.Println("Error connecting:", err.Error())
+		return
+	}
 }
 
 // domReady is called after front-end resources have been loaded
@@ -42,3 +50,10 @@ func (a *App) shutdown(ctx context.Context) {
 func (a *App) Greet(name string) string {
 	return fmt.Sprintf("Hello %s, It's show time!", name)
 }
+
+// connect to the server tcp
+func (a *App) GetAuctions() []string {
+	return a.client.GetAuctions()
+}
+
+

@@ -5,6 +5,7 @@ import { Libre_Baskerville } from 'next/font/google'
 import { Bricolage_Grotesque } from 'next/font/google'
 import './globals.css'
 import SideMenu from '@/components/component/side-menu'
+import TopMenu from '@/components/component/top-menu'
 
 const libre_baskerville = Libre_Baskerville({
   subsets: ['latin'],
@@ -24,6 +25,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
       <body className={libre_baskerville.variable + ' ' + bricolage_grotesque.variable}>
         <div className="grid min-h-screen w-full grid-cols-[280px_1fr] overflow-hidden">
           <SideMenu />
+          <TopMenu/>
           {children}
         </div>
       </body>
