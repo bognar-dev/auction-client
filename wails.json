@@ -1,0 +1,14 @@
+{
+  "$schema": "https://wails.io/schemas/config.v2.json",
+  "name": "auction-client",
+  "outputfilename": "auction-client",
+  "frontend:install": "npm install",
+  "frontend:build": "npm run build",
+  "frontend:dev:watcher": "npm run dev",
+  "frontend:dev:serverUrl": "auto",
+  "wailsjsdir": "frontend/wailsjs",
+  "author": {
+    "name": "Niklas Bognar",
+    "email": "94807001+nibog001@users.noreply.github.com"
+  }
+}
